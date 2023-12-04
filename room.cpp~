@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cstring>
+#include "Room.h"
+#include "item.h"
+
+using namespace std;
+
+Room::Room() {
+  description = new char[100];
+  id = 0;
+}
+
+char* Room::getDescription() {
+  return description;
+}
+
+int Room::getID() {
+  return id;
+}

@@ -1,0 +1,6 @@
+class Item {
+  Item();
+  char* getName();
+ private:
+  char* name;
+}
