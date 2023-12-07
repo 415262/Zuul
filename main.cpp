@@ -231,7 +231,7 @@ int main() {
 	hasPass = true;
 	continue;
       }
-      if (playerID == 14) {
+      if (playerID == 14 && gotMoney2 == false) {
 	cout << "You picked up the money from the ground." << endl;
 	gotMoney2 = true;
 	hasMoney2 = true;
@@ -243,7 +243,7 @@ int main() {
       }
     }
     if (input == "GIVE") {
-      if (playerID == 1 && hasPass == false) {
+      if (playerID == 1 && hasTicket == false) {
 	if (hasMoney1 == false && hasMoney2 == false) {
 	  cout << "You have no money to exchange." << endl;
 	  continue;
@@ -251,13 +251,13 @@ int main() {
 	else if (hasMoney1 == true) {
 	  cout << "You exchanged some money for a ticket." << endl;
 	  hasMoney1 = false;
-	  hasPass = true;
+	  hasTicket = true;
 	  continue;
 	}
 	else {
 	  cout<< "You exchanged some money for a ticket." << endl;
 	  hasMoney2 = false;
-	  hasPass = true;
+	  hasTicket = true;
 	  continue;
 	}
       }
@@ -402,6 +402,12 @@ void getDescription(int i) {
   }
   if (i == 14) {
     cout << "You are back outside behind the theater. You hear cars in the distance, and there's a faint smell of smoke." << endl;
+    if (gotMoney2 == true) {
+      cout << "This is where you picked up some more money." << endl;
+    }
+    else {
+      cout << "You see some money to PICKUP" << endl;
+    }
     cout << "Go SOUTH to return inside." << endl;
   }
   return;
